@@ -1,39 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <style>
+      :root {
+        --white: hsl(0, 0%, 98%);
+        --grey: hsl(0, 0%, 41%);
+        --black: hsl(0, 0%, 8%);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--white);
+      }
+      header {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        padding: 20px;
+      }
+      button {
+        background-color: var(--white);
+        color: var(--grey);
+        padding: 10px 20px;
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+        border-radius: 10px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .access {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-left: auto;
+      }
 
-  Features
-  Company
-  Careers
-  About
+      .access .login {
+        text-decoration: none;
+        color: var(--grey);
+      }
 
-  Login
-  Register
+      .access .register {
+        background-color: var(--white);
+        color: var(--grey);
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 1px solid var(--grey);
+        text-decoration: none;
+      }
+      .access .register:hover {
+        background-color: var(--black);
+        color: var(--white);
+      }
 
-  Make remote work
+      .logo img {
+        width: 100px;
+      }
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      ul a {
+        text-decoration: none;
+        color: var(--black);
+        font-weight: 500;
+        font-size: 18px;
+      }
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .hero img {
+        width: 100%;
+        height: 400px;
+      }
+      .container {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 50px;
+        align-items: center;
+        padding: 0 20px;
+        height: 100vh;
+        margin: 20px;
+      }
+      .content {
+        /* flex: 1 0 70%; */
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        color: var(--black);
+        margin: 20px;
+      }
+      .content h1 {
+        font-size: 4.5rem;
+        line-height: 1;
+      }
+      .content p {
+        margin: 20px 0;
+        font-size: 18px;
+        color: var(--grey);
+        line-height: 1.5;
+        font-weight: 500;
+      }
+      .content span {
+        color: var(--white);
+        background-color: var(--black);
+        font-weight: 700;
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        align-self: self-start;
+      }
+
+      footer {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+      }
+      footer img {
+        object-fit: contain;
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          gap: 20px;
+          height: 100%;
+        }
+
+        .content h1 {
+          font-size: 3rem;
+        }
+        .content p {
+          font-size: 16px;
+        }
+        .hero img {
+          height: 300px;
+        }
+      }
+      @media (max-width: 600px) {
+        header {
+          flex-wrap: wrap;
+        }
+        ul {
+          order: 2;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="./images/logo.svg" alt="" />
+      </div>
+      <!-- Links -->
+      <ul class="head">
+        <li class="feature">
+          <a href="#">feature</a>
+        </li>
+        <li class="company">
+          <a href="#">company</a>
+        </li>
+        <li class="connect">
+          <a href="#">connect</a>
+        </li>
+        <li>
+          <a href="#">about</a>
+        </li>
+      </ul>
+      <div class="access">
+        <a href="#" class="login">Login</a>
+        <a href="#" class="register">Register</a>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="content">
+        <h1>
+          Make <br />
+          remote work
+        </h1>
+        <p>
+          Get your team in syns, no matter your location <br />
+          streamline processes, creat tgeam rituals, and <br />
+          watch prodactivity source
+        </p>
+        <span>learn more</span>
+        <footer>
+          <img src="./images/client-databiz.svg" alt="" />
+          <img src="./images/client-audiophile.svg" alt="" />
+          <img src="./images/client-meet.svg" alt="" />
+          <img src="./images/client-maker.svg" alt="" />
+        </footer>
+      </div>
+      <div class="hero">
+        <img src="./images/image-hero-desktop.png" alt="" />
+      </div>
+    </div>
+  </body>
 </html>
